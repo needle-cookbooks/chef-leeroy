@@ -1,0 +1,11 @@
+#!/bin/bash
+exec 2>&1
+
+GUNICORN=<%= @options[:venv] %>/bin/gunicorn
+ROOT=<%= @options[:home] %>
+APP=leeroy.app:app
+
+export LEEROY_CONFIG=<%= @options[:home] %>/settings.py
+
+cd $ROOT
+exec chpst -u <%= @options[:user] %> $GUNICORN -c gunicorn.py $APP

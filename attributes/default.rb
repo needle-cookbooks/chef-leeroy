@@ -1,0 +1,13 @@
+default['leeroy']['home'] = '/opt/leeroy'
+default['leeroy']['user'] = 'leeroy'
+default['leeroy']['group'] = 'leeroy'
+default['leeroy']['listen'] = '0.0.0.0:3399'
+default['leeroy']['debug'] = false
+default['leeroy']['github_api_base'] = 'https://api.github.com'
+default['leeroy']['github_ssl_verify'] = true
+default['leeroy']['github_token'] = nil
+default['leeroy']['jenkins_url'] = 'https://jenkins.example.com'
+default['leeroy']['jenkins_username'] = nil
+default['leeroy']['jenkins_password'] = nil
+default['leeroy']['build_commits'] = 'NEW' # ALL, NEW or LAST
+default['leeroy']['repository_map'] = []
