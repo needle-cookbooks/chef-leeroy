@@ -1,7 +1,8 @@
 default['leeroy']['home'] = '/opt/leeroy'
 default['leeroy']['user'] = 'leeroy'
 default['leeroy']['group'] = 'leeroy'
-default['leeroy']['listen'] = '0.0.0.0:3399'
+default['leeroy']['port'] = '3399'
+default['leeroy']['ip'] = '0.0.0.0'
 default['leeroy']['debug'] = false
 default['leeroy']['github_api_base'] = 'https://api.github.com'
 default['leeroy']['github_ssl_verify'] = true

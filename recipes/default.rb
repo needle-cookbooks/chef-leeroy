@@ -59,7 +59,7 @@ gunicorn_py_path = ::File.join(leeroy['home'], 'gunicorn.py')
 gunicorn_config gunicorn_py_path do
   owner leeroy['user']
   group leeroy['group']
-  listen leeroy['listen']
+  listen [ leeroy['ip'], leeroy['port'] ].join(':')
   action :create
 end
 
