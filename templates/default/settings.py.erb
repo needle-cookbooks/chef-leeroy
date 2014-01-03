@@ -10,6 +10,8 @@ SERVER_NAME = "<%= @server_name %>"
 # proxying requests to leeroy.  Falls back to SERVER_NAME if not provided.
 <% if @notification_server_name -%>
 GITHUB_NOTIFICATION_SERVER_NAME = "<%= @notification_server_name %>"
+<% else -%>
+#GITHUB_NOTIFICATION_SERVER_NAME = "http://leeroy.example.com"
 <% end -%>
 
 # GitHub configuration
