@@ -14,3 +14,10 @@ suites:
     run_list:
       - recipe[leeroy::default]
     attributes:
+  - name: git
+    run_list:
+      - recipe[leeroy::default]
+    attributes:
+      leeroy:
+        install_method: git
+        git_source: git+git://github.com/litl/leeroy.git
