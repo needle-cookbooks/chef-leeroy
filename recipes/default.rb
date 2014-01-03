@@ -47,11 +47,22 @@ python_virtualenv venv_path do
   action :create
 end
 
-%w{ gunicorn leeroy }.each do |pkg|
-  python_pip pkg do
+case leeroy['install_method']
+when 'package'
+  python_pip 'leeroy' do
+    version leeroy['version'] if leeroy['version']
     virtualenv venv_path
-    action :install
   end
+when 'git'
+  include_recipe 'git'
+
+  python_pip leeroy['git_source'] do
+    virtualenv venv_path
+  end
+end
+
+gunicorn_install 'leeroy' do
+  virtualenv venv_path
 end
 
 gunicorn_py_path = ::File.join(leeroy['home'], 'gunicorn.py')

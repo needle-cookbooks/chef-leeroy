@@ -1,3 +1,6 @@
+default['leeroy']['install_method'] = 'package'
+default['leeroy']['version'] = nil    # only effective for install_method 'package'
+default['leeroy']['git_source'] = nil # only effective for install_method 'git'
 default['leeroy']['home'] = '/opt/leeroy'
 default['leeroy']['user'] = 'leeroy'
 default['leeroy']['group'] = 'leeroy'
