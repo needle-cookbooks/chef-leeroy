@@ -93,6 +93,13 @@ template settings_py_path do
   })
 end
 
+cron_d 'leeroy-cron' do
+  minute '*/5'
+  command "LEEROY_CONFIG=#{settings_py_path} #{venv_path}/bin/leeroy-cron"
+  user leeroy['user']
+  cookbook 'cron'
+end
+
 runit_service 'leeroy' do
   options({
     :user => leeroy['user'],

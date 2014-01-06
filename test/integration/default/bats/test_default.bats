@@ -14,3 +14,7 @@
   run nc -z 0.0.0.0 3399
   [ $status -eq 0 ]
 }
+
+@test "installed crontab for leeroy-cron" {
+  [ -f "/etc/cron.d/leeroy-cron" ]
+}
